@@ -42,13 +42,14 @@ header {
     border-radius: 8px; /* Cantos arredondados para o logo */
 }
 
-nav ul {
+/* Navegação Desktop */
+.desktop-nav ul {
     display: flex;
     list-style: none;
     gap: 2.5rem; /* Espaçamento maior entre os itens do menu */
 }
 
-nav a {
+.desktop-nav a {
     text-decoration: none;
     color: #333;
     font-weight: 600; /* Mais negrito */
@@ -57,13 +58,13 @@ nav a {
     padding: 5px 0; /* Adiciona padding para a animação de sublinhado */
 }
 
-nav a:hover {
+.desktop-nav a:hover {
     color: #16a34a;
     transform: translateY(-2px); /* Efeito de leve subida ao passar o mouse */
 }
 
 /* Animação de sublinhado no menu */
-nav a::after {
+.desktop-nav a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -75,8 +76,80 @@ nav a::after {
     transition: width 0.3s ease-in-out;
 }
 
-nav a:hover::after {
+.desktop-nav a:hover::after {
     width: 100%;
+}
+
+/* Menu Toggle (Hambúrguer) */
+.menu-toggle {
+    display: none; /* Oculto por padrão, visível apenas em mobile */
+    font-size: 2rem;
+    cursor: pointer;
+    color: #16a34a;
+}
+
+/* Menu Mobile */
+.mobile-nav {
+    display: none; /* Oculto por padrão */
+    background: white;
+    position: absolute;
+    top: 100%; /* Posiciona abaixo do cabeçalho */
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding-bottom: 1rem;
+    transform: translateY(-100%); /* Inicia fora da tela */
+    transition: transform 0.3s ease-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.mobile-nav.active {
+    display: block; /* Exibe quando ativo */
+    transform: translateY(0); /* Desliza para a posição */
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-nav li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    background: #f0f0f0;
+    color: #16a34a;
+}
+
+.btn-whatsapp-mobile {
+    background: #25d366; /* Cor do WhatsApp */
+    color: white !important; /* !important para sobrescrever o estilo padrão */
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    display: inline-block; /* Para que o padding e margin funcionem */
+    width: auto; /* Ajusta a largura ao conteúdo */
 }
 
 .btn {
@@ -132,6 +205,7 @@ nav a:hover::after {
     color: white;
     position: relative;
     overflow: hidden; /* Garante que as partículas não saiam */
+    padding-top: 80px; /* Adiciona padding para evitar sobreposição do header */
 }
 
 /* Pseudo-elemento para o overlay de gradiente */
@@ -223,6 +297,73 @@ section {
 .bg-dark {
     background: #1f2937;
     color: white;
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3.5rem; /* Ícone maior */
+    color: #16a34a;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Packages Section */
+.packages-section {
+    margin-bottom: 4rem;
+}
+
+.packages-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.packages-header h3 {
+    font-size: 2.2rem; /* Fonte maior */
+    color: #1f2937;
+}
+
+.icon {
+    font-size: 2.5rem; /* Ícone maior */
+}
+
+.icon-green {
+    color: #16a34a;
+}
+
+.icon-blue {
+    color: #2563eb;
 }
 
 /* Cards */
@@ -407,13 +548,22 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    nav ul {
-        display: none; /* Esconde o menu em telas menores */
+    .desktop-nav {
+        display: none; /* Esconde o menu desktop em telas menores */
+    }
+
+    .menu-toggle {
+        display: block; /* Exibe o ícone de hambúrguer */
     }
 
     .header-content {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row; /* Mantém logo e hambúrguer na mesma linha */
+        justify-content: space-between; /* Espaça logo e hambúrguer */
+        padding: 1rem 20px; /* Ajusta padding para mobile */
+    }
+
+    .hero {
+        padding-top: 100px; /* Aumenta o padding para acomodar o cabeçalho fixo no mobile */
     }
 
     .hero h1 {
@@ -436,91 +586,6 @@ footer {
         flex-direction: column;
         gap: 1rem;
     }
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.feature {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
-    transition: transform 0.3s ease;
-}
-
-.feature:hover {
-    transform: translateY(-5px);
-}
-
-.feature-icon {
-    font-size: 3.5rem; /* Ícone maior */
-    color: #16a34a;
-    margin-bottom: 1rem;
-}
-
-.section-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #6b7280;
-    margin-bottom: 2rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.packages-section {
-    margin-bottom: 4rem;
-}
-
-.packages-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.packages-header h3 {
-    font-size: 2.2rem; /* Fonte maior */
-    color: #1f2937;
-}
-
-.icon {
-    font-size: 2.5rem; /* Ícone maior */
-}
-
-.icon-green {
-    color: #16a34a;
-}
-
-.icon-blue {
-    color: #2563eb;
-}
-
-.checklist {
-    list-style: none;
-    margin: 1rem 0;
-    padding: 0;
-}
-
-.checklist li {
-    display: flex;
-    align-items: flex-start; /* Alinha o ícone com o topo do texto */
-    gap: 0.8rem;
-    margin-bottom: 0.8rem;
-    color: #4b5563; /* Cor de texto mais suave */
-}
-
-.checklist li i { /* Estilo para os ícones da checklist */
-    color: #16a34a;
-    font-size: 1.1rem;
-    margin-top: 4px; /* Ajuste fino para alinhamento */
 }
 
 /* Adicionando Fontes */
