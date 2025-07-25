@@ -90,23 +90,23 @@ header {
 
 /* Menu Mobile */
 .mobile-nav {
-    display: none; /* Oculto por padrão */
+    max-height: 0; /* Inicia com altura zero (oculto) */
+    overflow: hidden; /* Esconde o conteúdo que transborda */
     background: white;
     position: absolute;
     top: 100%; /* Posiciona abaixo do cabeçalho */
     left: 0;
     width: 100%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding-bottom: 1rem;
-    transform: translateY(-100%); /* Inicia fora da tela */
-    transition: transform 0.3s ease-out;
+    padding-bottom: 0; /* Inicialmente sem padding inferior */
+    transition: max-height 0.3s ease-out, padding-bottom 0.3s ease-out; /* Transição para altura e padding */
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
 .mobile-nav.active {
-    display: block; /* Exibe quando ativo */
-    transform: translateY(0); /* Desliza para a posição */
+    max-height: 500px; /* Altura suficiente para exibir todos os itens */
+    padding-bottom: 1rem; /* Adiciona padding inferior quando ativo */
 }
 
 .mobile-nav ul {
@@ -197,7 +197,7 @@ header {
 .hero {
     height: 100vh;
     /* Imagem de fundo com fallback e gradiente */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1920x1080/000000/FFFFFF/png?text=Paisagem+do+Brasil') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imagens/foto.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
