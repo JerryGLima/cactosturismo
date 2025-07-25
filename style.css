@@ -1,0 +1,527 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Usando Inter para um visual mais moderno */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6; /* Cor de fundo suave */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra mais suave */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom-left-radius: 10px; /* Cantos arredondados */
+    border-bottom-right-radius: 10px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo img {
+    height: 50px;
+    border-radius: 8px; /* Cantos arredondados para o logo */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem; /* Espaçamento maior entre os itens do menu */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600; /* Mais negrito */
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transições suaves */
+    padding: 5px 0; /* Adiciona padding para a animação de sublinhado */
+}
+
+nav a:hover {
+    color: #16a34a;
+    transform: translateY(-2px); /* Efeito de leve subida ao passar o mouse */
+}
+
+/* Animação de sublinhado no menu */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #16a34a;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.btn {
+    background: #16a34a;
+    color: white;
+    padding: 0.85rem 1.75rem; /* Padding ajustado */
+    border: none;
+    border-radius: 8px; /* Cantos mais arredondados */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease; /* Transições suaves */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(22, 163, 74, 0.2); /* Sombra para botões */
+}
+
+.btn:hover {
+    background: #15803d;
+    transform: translateY(-2px); /* Efeito de leve subida */
+    box-shadow: 0 6px 12px rgba(22, 163, 74, 0.3);
+}
+
+.btn-yellow {
+    background: #eab308;
+    color: black;
+    box-shadow: 0 4px 8px rgba(234, 179, 8, 0.2);
+}
+
+.btn-yellow:hover {
+    background: #ca8a04;
+    box-shadow: 0 6px 12px rgba(234, 179, 8, 0.3);
+}
+
+.btn-light-green {
+    background: #bbf7d0;
+    color: #166534;
+    box-shadow: 0 4px 8px rgba(187, 247, 208, 0.2);
+}
+
+.btn-light-green:hover {
+    background: #86efac;
+    box-shadow: 0 6px 12px rgba(187, 247, 208, 0.3);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    /* Imagem de fundo com fallback e gradiente */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1920x1080/000000/FFFFFF/png?text=Paisagem+do+Brasil') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden; /* Garante que as partículas não saiam */
+}
+
+/* Pseudo-elemento para o overlay de gradiente */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
+}
+
+.hero h1 {
+    font-size: 4.5rem; /* Fonte maior */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Sombra para o texto */
+    animation: fadeInDown 1s ease-out; /* Animação de entrada */
+}
+
+.hero p {
+    font-size: 1.6rem; /* Fonte maior */
+    margin-bottom: 2.5rem; /* Espaçamento maior */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+    animation: fadeInUp 1s ease-out 0.3s backwards; /* Animação com delay */
+}
+
+.hero .btn {
+    animation: zoomIn 1s ease-out 0.6s backwards; /* Animação com delay */
+}
+
+/* Animações Keyframes */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* Sections */
+section {
+    padding: 5rem 0;
+    position: relative; /* Para possíveis animações futuras */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem; /* Fonte maior */
+    margin-bottom: 2rem;
+    color: #1f2937;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: #16a34a;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 2px;
+}
+
+.bg-gray {
+    background: #f9fafb;
+}
+
+.bg-dark {
+    background: #1f2937;
+    color: white;
+}
+
+/* Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background: white;
+    border-radius: 16px; /* Mais arredondado */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra mais pronunciada e moderna */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #e0e0e0; /* Borda sutil */
+    display: flex; /* Adicionado para layout flexível */
+    flex-direction: column; /* Conteúdo em coluna */
+}
+
+.card:hover {
+    transform: translateY(-12px); /* Efeito mais notável */
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25); /* Sombra mais intensa no hover */
+}
+
+.card img {
+    width: 100%;
+    height: 220px; /* Altura um pouco maior para as imagens dos cards */
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transição para o zoom da imagem */
+}
+
+.card:hover img {
+    transform: scale(1.05); /* Leve zoom na imagem ao passar o mouse */
+}
+
+.card-content {
+    padding: 1.8rem; /* Padding um pouco maior */
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    font-size: 1.8rem; /* Fonte maior */
+    margin-bottom: 0.8rem; /* Espaçamento ajustado */
+    color: #1f2937;
+    font-weight: 700; /* Mais negrito */
+}
+
+.price {
+    color: #16a34a;
+    font-size: 2.5rem; /* Fonte maior */
+    font-weight: bold;
+    letter-spacing: -0.05em; /* Ajuste para um visual mais moderno */
+    align-self: flex-end; /* Alinha o preço à direita no flexbox */
+}
+
+.badge {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    background: #16a34a;
+    color: white;
+    padding: 0.7rem 1.4rem; /* Padding ajustado */
+    border-radius: 30px; /* Mais arredondado */
+    font-size: 1rem; /* Fonte um pouco maior */
+    font-weight: bold;
+    text-transform: uppercase; /* Texto em maiúsculas */
+    letter-spacing: 0.05em; /* Espaçamento entre letras */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Sombra para o badge */
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden; /* Garante que o zoom da imagem não transborde */
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Espaçamento ajustado */
+}
+
+.gallery img {
+    width: 100%;
+    height: 280px; /* Altura um pouco maior */
+    object-fit: cover;
+    border-radius: 12px; /* Mais arredondado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.03); /* Zoom mais suave */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Contact */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info span {
+    background: rgba(22, 163, 74, 0.1); /* Fundo suave para ícones */
+    padding: 0.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #111827;
+    color: white;
+    padding: 2.5rem 0; /* Padding ajustado */
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo img {
+    height: 40px;
+    border-radius: 8px;
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #25d366;
+    color: white;
+    width: 65px; /* Tamanho maior */
+    height: 65px; /* Tamanho maior */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.8rem; /* Ícone maior */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* Sombra mais forte */
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Efeito de zoom */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Esconde o menu em telas menores */
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3.5rem; /* Ícone maior */
+    color: #16a34a;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.packages-section {
+    margin-bottom: 4rem;
+}
+
+.packages-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.packages-header h3 {
+    font-size: 2.2rem; /* Fonte maior */
+    color: #1f2937;
+}
+
+.icon {
+    font-size: 2.5rem; /* Ícone maior */
+}
+
+.icon-green {
+    color: #16a34a;
+}
+
+.icon-blue {
+    color: #2563eb;
+}
+
+.checklist {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.checklist li {
+    display: flex;
+    align-items: flex-start; /* Alinha o ícone com o topo do texto */
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: #4b5563; /* Cor de texto mais suave */
+}
+
+.checklist li i { /* Estilo para os ícones da checklist */
+    color: #16a34a;
+    font-size: 1.1rem;
+    margin-top: 4px; /* Ajuste fino para alinhamento */
+}
+
+/* Adicionando Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
