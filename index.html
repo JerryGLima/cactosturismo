@@ -16,7 +16,7 @@
                 <div class="logo">
                     <img src="imagens/logo.png" alt="Cactos Turismo">
                 </div>
-                <nav>
+                <nav class="desktop-nav">
                     <ul>
                         <li><a href="#inicio">Início</a></li>
                         <li><a href="#sobre">Sobre Nós</a></li>
@@ -25,9 +25,23 @@
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </nav>
-                <a href="https://wa.me/5599991771910" class="btn" target="_blank">WhatsApp</a>
+                <!-- Botão de hambúrguer para mobile -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
+        <!-- Menu mobile (inicialmente oculto) -->
+        <nav class="mobile-nav" id="mobile-nav-links">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#pacotes">Pacotes</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="https://wa.me/5599991771910" class="btn-whatsapp-mobile" target="_blank">WhatsApp</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -92,95 +106,59 @@
                 <div class="cards-grid">
                     <!-- MACEIO - 2025 -->
                     <div class="card">
-                    <div class="card">
                         <div class="card-image">
-                            <img src="imagens/MACEIO - 2025.png" alt="Vista aérea do Rio de Janeiro com Cristo Redentor e Pão de Açúcar" style="height: auto; object-fit: unset;">
-                            
+                            <img src="imagens/MACEIO - 2025.png" alt="Vista aérea de Maceió" style="height: auto; object-fit: unset;">
                         </div>
                         <div class="card-content">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <!-- Preço pode ser adicionado aqui se houver um valor específico para o card -->
-                            </div>
-                        <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
+                            <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Maceió 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
                         </div>
-                    </div>
                     </div>
 
                     <!-- LEÇOIS MA -->
                     <div class="card">
-                     <div class="card">
                         <div class="card-image">
-                            <img src="imagens/Lenois Maranhheses.png" alt="Vista aérea do Rio de Janeiro com Cristo Redentor e Pão de Açúcar" style="height: auto; object-fit: unset;">
-                            
+                            <img src="imagens/Lenois Maranhheses.png" alt="Dunas dos Lençóis Maranhenses" style="height: auto; object-fit: unset;">
                         </div>
                         <div class="card-content">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <!-- Preço pode ser adicionado aqui se houver um valor específico para o card -->
-                            </div>
-                        <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
+                            <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Lençóis Maranhenses" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
                         </div>
-                    </div>
                     </div>
 
                     <!-- PORTO DE GALINHAS -->
                     <div class="card">
-                    <div class="card">
                         <div class="card-image">
-                            <img src="imagens/PORTO DE GALINHAS 2025.png" alt="Vista aérea do Rio de Janeiro com Cristo Redentor e Pão de Açúcar" style="height: auto; object-fit: unset;">
-                            
+                            <img src="imagens/PORTO DE GALINHAS 2025.png" alt="Piscinas naturais de Porto de Galinhas" style="height: auto; object-fit: unset;">
                         </div>
                         <div class="card-content">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <!-- Preço pode ser adicionado aqui se houver um valor específico para o card -->
-                            </div>
-                        <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
+                            <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Porto de Galinhas 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
                         </div>
-                    </div>
                     </div>
                      <!-- PAIXAO DE CRISTO -->
                     <div class="card">
-                    <div class="card">
                         <div class="card-image">
-                            <img src="imagens/PAIXAO DE CRISTO 2026.png" alt="Vista aérea do Rio de Janeiro com Cristo Redentor e Pão de Açúcar" style="height: auto; object-fit: unset;">
-                            
+                            <img src="imagens/PAIXAO DE CRISTO 2026.png" alt="Encenação da Paixão de Cristo" style="height: auto; object-fit: unset;">
                         </div>
                         <div class="card-content">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <!-- Preço pode ser adicionado aqui se houver um valor específico para o card -->
-                            </div>
-                        <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
+                            <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Paixão de Cristo 2026" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
                         </div>
-                    </div>
                     </div>
                      <!-- JERICOACOARA -->
                     <div class="card">
-                    <div class="card">
                         <div class="card-image">
-                            <img src="imagens/JERICOACOARA - CE - 2026.png" alt="Vista aérea do Rio de Janeiro com Cristo Redentor e Pão de Açúcar" style="height: auto; object-fit: unset;">
-                            
+                            <img src="imagens/JERICOACOARA - CE - 2026.png" alt="Paisagem de Jericoacoara" style="height: auto; object-fit: unset;">
                         </div>
                         <div class="card-content">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <!-- Preço pode ser adicionado aqui se houver um valor específico para o card -->
-                            </div>
-                        <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
+                            <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Jericoacoara 2026" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
                         </div>
-                    </div>
                     </div>
                      <!-- BEBERIBE -->
                     <div class="card">
-                    <div class="card">
                         <div class="card-image">
-                            <img src="imagens/DIA DOS NAMORADOS 2026.png" alt="Vista aérea do Rio de Janeiro com Cristo Redentor e Pão de Açúcar" style="height: auto; object-fit: unset;">
-                            
+                            <img src="imagens/DIA DOS NAMORADOS 2026.png" alt="Dia dos Namorados" style="height: auto; object-fit: unset;">
                         </div>
                         <div class="card-content">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <!-- Preço pode ser adicionado aqui se houver um valor específico para o card -->
-                            </div>
-                        <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
+                            <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Dia dos Namorados 2026" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -201,30 +179,20 @@
                     <div class="card">
                         <div class="card-image">
                             <img src="imagens/RIO DE JANEIRO1.png" alt="Vista aérea do Rio de Janeiro com Cristo Redentor e Pão de Açúcar" style="height: auto; object-fit: unset;">
-                            
                         </div>
                         <div class="card-content">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <!-- Preço pode ser adicionado aqui se houver um valor específico para o card -->
-                            </div>
-                        <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
+                            <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
                         </div>
                     </div>
                       <div class="card">
                         <div class="card-image">
-                            <img src="imagens/GRAMADO 2025.png" alt="Vista aérea do Rio de Janeiro com Cristo Redentor e Pão de Açúcar" style="height: auto; object-fit: unset;">
-                            
+                            <img src="imagens/GRAMADO 2025.png" alt="Paisagem de Gramado" style="height: auto; object-fit: unset;">
                         </div>
                         <div class="card-content">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <!-- Preço pode ser adicionado aqui se houver um valor específico para o card -->
-                            </div>
-                        <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Rio de Janeiro 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
+                            <a href="https://wa.me/5599991771910?text=Olá! Gostaria de saber mais sobre o Pacote Gramado 2025" class="btn btn-yellow" target="_blank" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Saiba Mais e Reserve</a>
                         </div>
                     </div>
 
-                          
-                    
                     <!-- Orçamento Personalizado Aéreo -->
                     <div class="card">
                         <div class="card-image" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); height: 200px; display: flex; align-items: center; justify-content: center;">
@@ -324,11 +292,10 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="imagens/logorodape.png" alt="Cactos Turismo">
-                    
                 </div>
                 
                 <div style="text-align: right;">
-                    <p style="color: #9ca3af;">© 2024 Cactos Turismo. Todos os direitos reservados.</p>
+                    <p style="color: #9ca3af;">© 2025 Cactos Turismo. Todos os direitos reservados.</p>
                     <p style="color: #9ca3af; font-size: 0.9rem;">Conhecendo o Brasil com Amigos</p>
                 </div>
             </div>
@@ -337,7 +304,6 @@
 
     <!-- WhatsApp Flutuante -->
     <a href="https://wa.me/5599991771910" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-
 
     <script src="script.js"></script>
 </body>
